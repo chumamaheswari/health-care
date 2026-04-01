@@ -1,0 +1,4 @@
+employee_id,name,department,role,hire_date,status,salary,email,phone,created_at,updated_at
+E002,Bob Smith,Finance,Accountant,2022-06-01,Active,68000.0,bob@company.com,555-1002,2026-03-31T19:58:18.010678,2026-03-31T19:58:18.010678
+E005,Eva Martinez,Finance,Financial Analyst,2023-09-05,Active,72000.0,eva@company.com,555-1005,2026-03-31T19:58:18.046331,2026-03-31T19:58:18.046331
+E008,Henry Davis,Finance,Payroll Specialist,2022-08-22,On Leave,65000.0,henry@company.com,555-1008,2026-03-31T19:58:18.083412,2026-03-31T19:58:18.083412

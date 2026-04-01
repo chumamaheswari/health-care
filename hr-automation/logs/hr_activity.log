@@ -1,0 +1,30 @@
+[2026-03-31 19:58:17] INFO | storage | Database initialized.
+[2026-03-31 19:58:17] INFO | employee_manager | Processing file: sample_employees.csv
+[2026-03-31 19:58:17] INFO | employee_manager | Loaded 10 records from sample_employees.csv
+[2026-03-31 19:58:17] INFO | validator | Record E001 passed validation.
+[2026-03-31 19:58:17] INFO | validator | Record E002 passed validation.
+[2026-03-31 19:58:17] INFO | validator | Record E003 passed validation.
+[2026-03-31 19:58:17] INFO | validator | Record E004 passed validation.
+[2026-03-31 19:58:17] INFO | validator | Record E005 passed validation.
+[2026-03-31 19:58:17] INFO | validator | Record E006 passed validation.
+[2026-03-31 19:58:17] INFO | validator | Record E007 passed validation.
+[2026-03-31 19:58:17] INFO | validator | Record E008 passed validation.
+[2026-03-31 19:58:17] INFO | validator | Record E009 passed validation.
+[2026-03-31 19:58:17] INFO | validator | Record E010 passed validation.
+[2026-03-31 19:58:18] INFO | storage | INSERT: E001 - Alice Johnson
+[2026-03-31 19:58:18] INFO | storage | INSERT: E002 - Bob Smith
+[2026-03-31 19:58:18] INFO | storage | INSERT: E003 - Carol White
+[2026-03-31 19:58:18] INFO | storage | INSERT: E004 - David Brown
+[2026-03-31 19:58:18] INFO | storage | INSERT: E005 - Eva Martinez
+[2026-03-31 19:58:18] INFO | storage | INSERT: E006 - Frank Lee
+[2026-03-31 19:58:18] INFO | storage | INSERT: E007 - Grace Kim
+[2026-03-31 19:58:18] INFO | storage | INSERT: E008 - Henry Davis
+[2026-03-31 19:58:18] INFO | storage | INSERT: E009 - Iris Chen
+[2026-03-31 19:58:18] INFO | storage | INSERT: E010 - Jack Wilson
+[2026-03-31 19:58:18] INFO | employee_manager | Done: 10 processed, 0 failed.
+[2026-03-31 19:58:21] INFO | storage | Database initialized.
+[2026-03-31 19:58:21] INFO | main | Generating reports...
+[2026-03-31 19:58:21] INFO | reporter | Full report generated: all_employees_20260331_195821.csv (10 employees)
+[2026-03-31 19:58:21] INFO | reporter | Sales report: 4 employees -> sales_20260331_195821.csv
+[2026-03-31 19:58:21] INFO | reporter | Finance report: 3 employees -> finance_20260331_195821.csv
+[2026-03-31 19:58:21] INFO | reporter | Operations report: 3 employees -> operations_20260331_195821.csv

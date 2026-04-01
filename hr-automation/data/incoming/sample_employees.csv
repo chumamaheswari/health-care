@@ -1,0 +1,11 @@
+employee_id,name,department,role,hire_date,status,salary,email,phone
+E001,Alice Johnson,Sales,Sales Manager,2023-01-15,Active,75000,alice@company.com,555-1001
+E002,Bob Smith,Finance,Accountant,2022-06-01,Active,68000,bob@company.com,555-1002
+E003,Carol White,Operations,Logistics Coordinator,2021-03-20,Active,55000,carol@company.com,555-1003
+E004,David Brown,Sales,Sales Rep,2024-02-10,Active,48000,david@company.com,555-1004
+E005,Eva Martinez,Finance,Financial Analyst,2023-09-05,Active,72000,eva@company.com,555-1005
+E006,Frank Lee,Operations,Warehouse Supervisor,2020-11-30,Active,60000,frank@company.com,555-1006
+E007,Grace Kim,Sales,Sales Rep,2024-05-18,Active,47000,grace@company.com,555-1007
+E008,Henry Davis,Finance,Payroll Specialist,2022-08-22,On Leave,65000,henry@company.com,555-1008
+E009,Iris Chen,Operations,Driver,2021-07-14,Active,42000,iris@company.com,555-1009
+E010,Jack Wilson,Sales,Account Manager,2023-04-01,Active,70000,jack@company.com,555-1010

@@ -1,0 +1,4 @@
+employee_id,name,department,role,hire_date,status,salary,email,phone,created_at,updated_at
+E003,Carol White,Operations,Logistics Coordinator,2021-03-20,Active,55000.0,carol@company.com,555-1003,2026-03-31T19:58:18.022787,2026-03-31T19:58:18.022787
+E006,Frank Lee,Operations,Warehouse Supervisor,2020-11-30,Active,60000.0,frank@company.com,555-1006,2026-03-31T19:58:18.061501,2026-03-31T19:58:18.061501
+E009,Iris Chen,Operations,Driver,2021-07-14,Active,42000.0,iris@company.com,555-1009,2026-03-31T19:58:18.095590,2026-03-31T19:58:18.095590

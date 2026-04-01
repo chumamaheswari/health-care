@@ -1,0 +1,5 @@
+employee_id,name,department,role,hire_date,status,salary,email,phone,created_at,updated_at
+E001,Alice Johnson,Sales,Sales Manager,2023-01-15,Active,75000.0,alice@company.com,555-1001,2026-03-31T19:58:17.998848,2026-03-31T19:58:17.998848
+E004,David Brown,Sales,Sales Rep,2024-02-10,Active,48000.0,david@company.com,555-1004,2026-03-31T19:58:18.034631,2026-03-31T19:58:18.034631
+E007,Grace Kim,Sales,Sales Rep,2024-05-18,Active,47000.0,grace@company.com,555-1007,2026-03-31T19:58:18.072524,2026-03-31T19:58:18.072524
+E010,Jack Wilson,Sales,Account Manager,2023-04-01,Active,70000.0,jack@company.com,555-1010,2026-03-31T19:58:18.108353,2026-03-31T19:58:18.108353
