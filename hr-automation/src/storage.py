@@ -42,6 +42,16 @@ def initialize_db():
         )
     ''')
 
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS employee_documents (
+            id              INTEGER PRIMARY KEY AUTOINCREMENT,
+            employee_id     TEXT NOT NULL,
+            filename        TEXT NOT NULL,
+            original_name   TEXT NOT NULL,
+            uploaded_at     TEXT NOT NULL
+        )
+    ''')
+
     conn.commit()
     conn.close()
     log.info("Database initialized.")
@@ -97,6 +107,41 @@ def upsert_employee(record: dict):
     log_activity(action, record['employee_id'], f"{record['name']} | {record['department']}")
     log.info(f"{action}: {record['employee_id']} - {record['name']}")
     return action
+
+def get_employee(employee_id: str):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM employees WHERE employee_id=?', (employee_id,))
+    row = cursor.fetchone()
+    conn.close()
+    return row
+
+def delete_employee(employee_id: str):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute('DELETE FROM employees WHERE employee_id=?', (employee_id,))
+    conn.commit()
+    conn.close()
+    log_activity('DELETE', employee_id)
+
+def save_document(employee_id: str, filename: str, original_name: str):
+    from datetime import datetime
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute(
+        'INSERT INTO employee_documents (employee_id, filename, original_name, uploaded_at) VALUES (?, ?, ?, ?)',
+        (employee_id, filename, original_name, datetime.now().isoformat())
+    )
+    conn.commit()
+    conn.close()
+
+def get_documents(employee_id: str):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM employee_documents WHERE employee_id=? ORDER BY uploaded_at DESC', (employee_id,))
+    rows = cursor.fetchall()
+    conn.close()
+    return rows
 
 def get_all_employees():
     conn = get_connection()
