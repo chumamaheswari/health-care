@@ -1,6 +1,6 @@
 import os
 import sys
-import sqlite3
+from html import escape
 from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -33,15 +33,15 @@ def rows_to_html_table(rows, table_id):
         status_class = 'active' if r[5] == 'Active' else ('leave' if r[5] == 'On Leave' else 'inactive')
         salary = f"${float(r[6]):,.0f}" if r[6] else '-'
         html += f'''<tr>
-            <td>{r[0]}</td>
-            <td>{r[1]}</td>
-            <td>{r[2]}</td>
-            <td>{r[3]}</td>
-            <td>{r[4]}</td>
-            <td><span class="badge {status_class}">{r[5]}</span></td>
+            <td>{escape(str(r[0]))}</td>
+            <td>{escape(str(r[1]))}</td>
+            <td>{escape(str(r[2]))}</td>
+            <td>{escape(str(r[3]))}</td>
+            <td>{escape(str(r[4]))}</td>
+            <td><span class="badge {status_class}">{escape(str(r[5]))}</span></td>
             <td>{salary}</td>
-            <td>{r[7] or '-'}</td>
-            <td>{r[8] or '-'}</td>
+            <td>{escape(str(r[7])) if r[7] else '-'}</td>
+            <td>{escape(str(r[8])) if r[8] else '-'}</td>
         </tr>'''
     html += '</tbody></table>'
     return html

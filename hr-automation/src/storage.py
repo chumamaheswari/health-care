@@ -143,6 +143,49 @@ def get_documents(employee_id: str):
     conn.close()
     return rows
 
+def get_next_employee_id() -> str:
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT employee_id FROM employees WHERE employee_id GLOB 'E[0-9]*' ORDER BY employee_id DESC LIMIT 1")
+    row = cursor.fetchone()
+    conn.close()
+    if row:
+        try:
+            num = int(row[0][1:]) + 1
+            return f"E{num:03d}"
+        except ValueError:
+            pass
+    return "E001"
+
+def get_activity_log(page: int = 1, per_page: int = 30):
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute('SELECT COUNT(*) FROM activity_log')
+    total = cursor.fetchone()[0]
+    offset = (page - 1) * per_page
+    cursor.execute('SELECT * FROM activity_log ORDER BY id DESC LIMIT ? OFFSET ?', (per_page, offset))
+    rows = cursor.fetchall()
+    conn.close()
+    return rows, total
+
+def delete_document(doc_id: int, uploads_dir: str) -> bool:
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute('SELECT filename FROM employee_documents WHERE id=?', (doc_id,))
+    row = cursor.fetchone()
+    if not row:
+        conn.close()
+        return False
+    filename = row[0]
+    cursor.execute('DELETE FROM employee_documents WHERE id=?', (doc_id,))
+    conn.commit()
+    conn.close()
+    import os
+    filepath = os.path.join(uploads_dir, filename)
+    if os.path.exists(filepath):
+        os.remove(filepath)
+    return True
+
 def get_all_employees():
     conn = get_connection()
     cursor = conn.cursor()
